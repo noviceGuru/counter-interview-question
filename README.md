@@ -1,30 +1,18 @@
-# React + TypeScript + Vite
+# Interview live coding question
+This is the code I wrote for an interview.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The questions is, make a counter which increases and decreases with clicking on the buttons, and if keeping the button for 2 seconds, it will increase / decrease by 5.
 
-Currently, two official plugins are available:
+It has to keep the same number on the counter, once the window is refreshed.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+It also had to look like a mock up that was given in only an image.
 
-## Expanding the ESLint configuration
+# Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+I used `vite` to create a `React` project with `TypeScript`
 
-- Configure the top-level `parserOptions` property like this:
+# Solution
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+I used `onClick`, `onMouseUp` and `onMouseDown`. Everytime a mouse button was held down, I would capture the time in millisecond using `Date.now()`, and subtract it by the time I got once mouse button was released.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Also, the time is saved on `localStorage` every time it changed, so it would be persistent, as asked in the question.
